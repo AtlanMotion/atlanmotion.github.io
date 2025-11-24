@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Retos</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- SECCIÓN PRINCIPAL UNIFICADA -->
+  <main class="contenedor-retos">
+    
+    <!-- Hero Section Unificada con Reto -->
+    <section class="hero-retos">
+      <img class="hero-retos__imagen" src="img/retos_titulo.png" alt="ATLANMOTION Retos" />
+      <h1 class="hero-retos__titulo">SUPERA TUS METAS</h1>
+      <p class="hero-retos__descripcion">
+        Cada semana un nuevo desafío te espera para poner a prueba tu resistencia, 
+        fuerza y disciplina. Conviértelo en un hábito y lleva tu entrenamiento al siguiente nivel.
+      </p>
+
+      <!-- Reto Integrado -->
+      <div class="reto-integrado">
+        <h2 class="reto-integrado__titulo">Desafío de la Semana</h2>
+        <h3 class="reto-integrado__subtitulo">Entrenamiento de Fuerza Completo</h3>
+
+        <!-- Video -->
+        <div class="reto-video">
+          <iframe src="https://www.youtube.com/embed/KaJqgweaGss?si=Hob1BxRf9Zceb-iS" 
+                  title="Reto AtlanMotion - Entrenamiento de Fuerza"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Información del Reto -->
+        <div class="reto-info">
+          <div class="reto-info__grid">
+            <div class="info-item">
+              <span class="info-item__icono"></span>
+              <span class="info-item__label">Duración</span>
+              <span class="info-item__valor">25-30 minutos</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item__icono"></span>
+              <span class="info-item__label">Nivel</span>
+              <span class="info-item__valor">Intermedio</span>
+            </div>
+            <div class="info-item">
+              <span class="info-item__icono"></span>
+              <span class="info-item__label">Objetivo</span>
+              <span class="info-item__valor">Fuerza general</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="reto-acciones">
+          <button class="btn btn--primario" id="btn-comenzar-reto">Comenzar Reto</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal del Reto -->
+  <div id="modal-reto" class="modal">
+    <div class="modal__contenido">
+      <h3 class="modal__titulo">Reto de la semana</h3>
+      <p class="modal__descripcion">Completa cada fase para terminar tu reto</p>
+
+      <div class="modal__pasos">
+        <button class="paso" id="paso-1">Calentamiento</button>
+        <button class="paso" id="paso-2" disabled>Rutina de Fuerza</button>
+        <button class="paso" id="paso-3" disabled>Enfriamiento</button>
+      </div>
+
+      <div id="mensaje-completado" class="modal__mensaje">¡Reto completado! 🎉</div>
+      <br>
+      <button class="btn btn--primario" id="btn-cerrar-modal">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    // Cargar el header
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error cargando el header:', error);
+      });
+
+    // Lógica del Modal del Reto
+    const modal = document.getElementById('modal-reto');
+    const btnComenzar = document.getElementById('btn-comenzar-reto');
+    const btnCerrar = document.getElementById('btn-cerrar-modal');
+    const pasos = [document.getElementById('paso-1'), document.getElementById('paso-2'), document.getElementById('paso-3')];
+    const mensajeCompletado = document.getElementById('mensaje-completado');
+
+    btnComenzar.addEventListener('click', () => {
+      modal.classList.add('modal--activo');
+      document.body.style.overflow = 'hidden';
+    });
+
+    btnCerrar.addEventListener('click', () => {
+      modal.classList.remove('modal--activo');
+      document.body.style.overflow = 'auto';
+      reiniciarReto();
+    });
+
+    pasos.forEach((paso, index) => {
+      paso.addEventListener('click', () => {
+        paso.disabled = true;
+        paso.textContent = `✓ ${paso.textContent} Completado`;
+        
+        if (index < pasos.length - 1) {
+          pasos[index + 1].disabled = false;
+        } else {
+          mensajeCompletado.style.opacity = '1';
+        }
+      });
+    });
+
+    function reiniciarReto() {
+      pasos.forEach((paso, index) => {
+        const textosOriginales = ['Calentamiento', 'Rutina de Fuerza', 'Enfriamiento'];
+        paso.disabled = index > 0;
+        paso.textContent = textosOriginales[index];
+      });
+      mensajeCompletado.style.opacity = '0';
+    }
+
+    // Cerrar modal al hacer clic fuera
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('modal--activo');
+        document.body.style.overflow = 'auto';
+        reiniciarReto();
+      }
+    });
+
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('modal--activo')) {
+        modal.classList.remove('modal--activo');
+        document.body.style.overflow = 'auto';
+        reiniciarReto();
+      }
+    });
+  </script>
+   <script src="js/scripts.js"></script>
+</body>
+
+</html>

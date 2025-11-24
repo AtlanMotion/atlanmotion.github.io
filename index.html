@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Transforma tu cuerpo, transforma tu vida</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body class="inicio">
+  <div id="header-placeholder"></div>
+
+  <!-- Sección Hero -->
+  <section class="section">
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-content">
+          <img class="hero-image" src="img/inicio_titulo.png" alt="ATLANMOTION - Tu mejor versión" />
+          <h2 class="hero-title">COMIENZA HOY.</h2>
+          <p class="hero-text">
+            Descubre rutinas diseñadas por expertos y da el primer paso hacia una vida más activa y saludable.
+            Transforma tu cuerpo con entrenamientos efectivos y comprobados.
+          </p>
+          <a href="rutinas.html" class="cta-button">Comenzar ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva sección: Beneficios rápidos -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Beneficios Rápidos</h2>
+      <p class="section-subtitle">
+        Resultados que notarás desde las primeras sesiones.
+      </p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3 class="benefit-title">Rutinas Personalizadas</h3>
+          <p class="benefit-description">
+            Ejercicios adaptados a tu nivel, objetivos y disponibilidad de tiempo.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3 class="benefit-title">Sesiones Eficientes</h3>
+          <p class="benefit-description">
+            Máximo resultado en menor tiempo con entrenamientos de alta intensidad controlada.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3 class="benefit-title">Seguimiento de Progreso</h3>
+          <p class="benefit-description">
+            Monitorea tu evolución y ajusta tu plan para alcanzar tus metas más rápido.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <h3 class="benefit-title">Asesoramiento Profesional</h3>
+          <p class="benefit-description">
+            Consejos directos de expertos en fitness, nutrición y prevención de lesiones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva sección: Expertos que nos respaldan -->
+  <section class="experts-section">
+    <div class="container">
+      <h2 class="section-title">Profesional que Nos Respalda</h2>
+      <p class="section-subtitle">
+        Un profesional certificado en fitness y salud que avala nuestro enfoque.
+      </p>
+
+      <div class="experts-grid">
+        <div class="expert-card">
+          <p class="expert-name">C. Sharim Arizqueta</p>
+          <p class="expert-specialty">Especialista en entrenamiento</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva sección: Testimonios -->
+  <section class="testimonial-section">
+    <div class="container">
+      <h2 class="section-title">Lo Que Dicen Nuestros Usuarios</h2>
+      <p class="section-subtitle">
+        Experiencias reales de personas que han transformado sus vidas con nuestras rutinas.
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="img/avatar_MG.jpg" alt="María G.">
+          </div>
+          <p class="testimonial-text">
+            "Antes me costaba mucho bajar de peso, pero estas rutinas desde casa me ayudaron a perder kilos sin sentir
+            que estaba sufriendo. Ahora tengo más energía y confianza."
+          </p>
+          <p class="testimonial-author">- María G.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="img/avatar_JL.jpg" alt="Carlos R.">
+          </div>
+          <p class="testimonial-text">
+            "Me encanta el enfoque detrás de cada rutina. La progresión es perfecta y se nota que todo está pensado para
+            realmente funcionar. Lo recomiendo mucho."
+          </p>
+          <p class="testimonial-author">- Jorge L.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src="img/avatar_RC.jpg" alt="Roel Chable">
+          </div>
+          <p class="testimonial-text">
+            "Seguir las rutinas desde casa ha sido un cambio total. Con mi trabajo y todo, ahora me siento más activo y
+            he empezado a ver cambios en mi cuerpo. ¡Estoy súper contento!"
+          </p>
+          <p class="testimonial-author">- Roel Chable</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animación al hacer scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observar todas las secciones principales
+    document.querySelectorAll('.hero-section, .benefits-section, .experts-section, .testimonial-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Observar tarjetas individuales
+    document.querySelectorAll('.benefit-card, .expert-card, .testimonial-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Efecto de carga completa
+    window.addEventListener('load', function () {
+      document.body.classList.add('loaded');
+    });
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Rutinas</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Sección Hero con línea divisoria -->
+  <section class="seccion-hero-rutinas">
+    <div class="contenedor">
+      <img class="hero-imagen-rutinas" src="img/rutinas_titulo.png" alt="Rutinas ATLANMOTION" />
+      <p class="hero-texto-rutinas">
+        Encuentra la rutina perfecta para ti y comienza a moverte hacia una vida
+        más saludable. Diseñada para adaptarse a tu ritmo, nuestras rutinas te
+        ayudarán a mantenerte en movimiento y alcanzar tus objetivos.
+      </p>
+      <!-- Flecha funcional -->
+      <a href="#principiantes" class="btnCirculo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flecha" viewBox="0 0 24 24">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sección Principiantes con línea divisoria -->
+  <section id="principiantes" class="seccion-rutina">
+    <div class="contenedor">
+      <div class="grid-rutina">
+        <div class="contenido-texto orden-2 orden-md-1">
+          <img class="titulo-rutina" src="img/rutinas_principiantes.png" alt="Rutinas para Principiantes" />
+          <p class="descripcion-rutina">
+            Empieza con una base sólida y desarrolla hábitos que te acompañarán en
+            el camino. Estas rutinas están diseñadas para que te adaptes al
+            ejercicio de manera progresiva y segura, fortaleciendo tu cuerpo,
+            mejorando tu resistencia y preparándote para nuevos desafíos.
+          </p>
+          <a href="pages/principiantes.html" class="boton-rutina">
+            Comenzar rutina
+          </a>
+        </div>
+        <div class="orden-1 orden-md-2">
+          <div class="contenedor-imagenes">
+            <img class="imagen-principal" src="img/rutinas_principiantes_01.jpg" alt="Ejercicio para principiantes 1" />
+            <img class="imagen-secundaria" src="img/rutinas_principiantes_02.jpg" alt="Ejercicio para principiantes 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Intermedios con línea divisoria -->
+  <section class="seccion-rutina">
+    <div class="contenedor">
+      <div class="grid-rutina">
+        <div class="orden-1 orden-md-1">
+          <img class="imagen-unica" src="img/rutinas_intermedios_01.png" alt="Ejercicio para intermedios" />
+        </div>
+        <div class="contenido-texto orden-2 orden-md-2">
+          <img class="titulo-rutina" src="img/rutinas_intermedios.png" alt="Rutinas para Intermedios" />
+          <p class="descripcion-rutina">
+            Lleva tu entrenamiento al siguiente nivel y supera tus propios
+            límites. Aumenta la intensidad, mejora tu resistencia y fortalece tu
+            cuerpo con rutinas diseñadas para desafiarte constantemente y llevar
+            tu condición física a nuevas alturas.
+          </p>
+          <a href="pages/intermedios.html" class="boton-rutina">
+            Subir de nivel
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Personalizado con línea divisoria -->
+  <section class="seccion-rutina">
+    <div class="contenedor">
+      <div class="grid-rutina">
+        <div class="contenido-texto orden-2 orden-md-1">
+          <img class="titulo-rutina" src="img/rutinas_personalizado.png" alt="Rutinas Personalizadas" />
+          <p class="descripcion-rutina">
+            Diseña una rutina que se adapte a tus objetivos, necesidades y nivel
+            de condición física. Con nuestro plan personalizado, un experto
+            evaluará tu perfil y te proporcionará una guía única, ajustada a tu
+            ritmo y metas. Porque cada cuerpo es distinto, tu rutina también debe
+            serlo.
+          </p>
+          <a href="contacto.html" class="boton-rutina">
+            Mi rutina personalizada
+          </a>
+        </div>
+        <div class="orden-1 orden-md-2">
+          <div class="contenedor-imagenes">
+            <img class="imagen-principal" src="img/rutinas_personalizado_01.jpg" alt="Ejercicio personalizado 1" />
+            <img class="imagen-secundaria" src="img/rutinas_personalizado_02.jpg" alt="Ejercicio personalizado 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script simplificado -->
+
+  <script>
+    // Cargar el header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error cargando el header:', error);
+      });
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

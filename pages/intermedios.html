@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Próximamente</title>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Sección Principal COMPLETAMENTE CENTRADA -->
+  <section class="contenedor-principal-intermedios">
+    <div class="contenido-centrado-intermedios">
+      <img class="imagen-principal-intermedios" src="../img/intermedios_titulo.png" alt="Próximamente" />
+      <p class="texto-descripcion-intermedios">
+        Estamos trabajando en nuevas rutinas para usuarios de nivel intermedio.
+        Muy pronto podrás llevar tu entrenamiento al siguiente nivel con
+        sesiones diseñadas para seguir avanzando con fuerza y enfoque.
+      </p>
+      <div class="contenedor-boton-intermedios">
+        <a href="#desafio-intermedios">
+          <div class="btnCirculo-intermedios">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flecha" viewBox="0 0 24 24">
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Video CENTRADA -->
+  <section id="desafio-intermedios" class="seccion-video-intermedios">
+    <div class="contenedor-video-intermedios">
+      <iframe class="video-iframe-intermedios" 
+        src="https://www.youtube.com/embed/KaJqgweaGss?si=Hob1BxRf9Zceb-iS"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Script para cargar el header -->
+  <script>
+    // Cargar el header
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error cargando el header:', error);
+      });
+  </script>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>

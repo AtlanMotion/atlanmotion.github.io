@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Contacto</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <div class="contenedor-contacto">
+    <img class="imagen-contacto" src="img/contacto_titulo.png" alt="Contacto ATLANMOTION - Estamos aquí para ayudarte" />
+    <p class="texto-contacto">
+      ¿Tienes dudas, sugerencias o quieres dar el siguiente paso en tu
+      entrenamiento? Estamos aquí para ayudarte. Contáctanos y te
+      responderemos lo antes posible.
+    </p>
+    <a target="_blank"
+      href="https://wa.me/529993650404?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20y%20orientaci%C3%B3n%20sobre%20AtlanMotion.%20%C2%BFme%20pueden%20ayudar%3F"
+      class="boton-contacto">
+         💬 Hablar con un experto vía WhatsApp
+    </a>
+
+    <!-- INFORMACIÓN ADICIONAL -->
+    <div class="info-adicional">
+      <h3>Más formas de contactarnos</h3>
+      <p>
+        Además de WhatsApp, puedes encontrarnos en nuestras redes sociales.
+      </p>
+      <div class="detalles-contacto">
+        <div class="detalle-item">
+          <strong>🕒 Horario</strong>
+          <span>Atención 24/7</span>
+        </div>
+        <div class="detalle-item"> 
+          <strong>📷 Instagram</strong>
+          <span> <a href="https://www.instagram.com/atlanmotion" target="_blank" 
+     style="color: inherit; text-decoration: none;" 
+     onmouseover="this.style.color='#fed64c';" 
+     onmouseout="this.style.color='inherit';">
+    @atlanmotion
+  </a></span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Animación de aparición mejorada
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observar elementos principales
+    document.querySelectorAll('.imagen-contacto, .texto-contacto, .boton-contacto, .info-adicional').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Efecto de carga progresiva
+    window.addEventListener('load', function () {
+      document.body.classList.add('loaded');
+    });
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

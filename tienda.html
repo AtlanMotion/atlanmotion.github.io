@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATLANMOTION - Tienda</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- TÍTULO TIENDA PRIMERO -->
+  <div class="titulo-tienda">
+    <div class="texto-centrado">
+      <img src="img/tienda_titulo.png" alt="Tienda AtlanMotion" />
+    </div>
+  </div>
+
+  <!-- Sección de instrucciones de compra -->
+  <div class="contenedor">
+    <div class="instrucciones-compra">
+      <h2>¿Cómo Comprar?</h2>
+      <div class="grid-instrucciones">
+        <div class="paso-compra">
+          <div class="numero">1</div>
+          <h3>Elige tu producto</h3>
+          <p>Selecciona el artículo que deseas comprar de nuestra tienda</p>
+        </div>
+        <div class="paso-compra">
+          <div class="numero">2</div>
+          <h3>Haz clic en <br> "LO QUIERO"</h3>
+          <p>Te redirigirá a WhatsApp para coordinar los detalles de tu compra</p>
+        </div>
+        <div class="paso-compra">
+          <div class="numero">3</div>
+          <h3>Recibe tu producto</h3>
+          <p>Coordina la entrega y pago directamente con nuestro equipo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid de productos -->
+  <div class="contenedor-productos">
+    <div class="grid-productos">
+      <!-- Producto 1 - Hoodie -->
+      <div class="producto-card" style="background-image: url(img/producto_hoodie.png)" onclick="openModal('1')">
+        <div class="producto-info">
+          <h3>HOODIE SIN MANGAS</h3>
+          <div class="precio">$450</div>
+          <div class="descripcion">Entrena con libertad y estilo</div>
+        </div>
+      </div>
+
+      <!-- Producto 2 - Termo -->
+      <div class="producto-card" style="background-image: url(img/producto_termo.png)" onclick="openModal('2')">
+        <div class="producto-info">
+          <h3>TERMO</h3>
+          <div class="precio">$350</div>
+          <div class="descripcion">Mantente hidratado en todo momento</div>
+        </div>
+      </div>
+
+      <!-- Producto 3 - Mochila -->
+      <div class="producto-card" style="background-image: url(img/producto_mochila.png)" onclick="openModal('3')">
+        <div class="producto-info">
+          <h3>MOCHILA</h3>
+          <div class="precio">$250</div>
+          <div class="descripcion">Lleva todo lo que necesitas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1 - Hoodie -->
+  <div id="modal-1" class="n-modal">
+    <div class="modal-contenido">
+      <div class="boton-cerrar" onclick="closeModal('1')">
+        <img src="img/close-btn.png" alt="Cerrar" />
+      </div>
+
+      <div class="modal-imagen" style="background-image: url(img/producto_hoodie.png)"></div>
+
+      <div class="modal-info">
+        <div>
+          <h3>HOODIE SIN MANGAS</h3>
+          <div class="modal-precio">$450</div>
+          <p class="modal-descripcion">
+            Entrena con libertad y estilo con nuestra hoodie sin mangas AtlanMotion.
+            Diseñada para brindarte comodidad y movilidad, es perfecta para cualquier
+            rutina, dentro y fuera del gimnasio. Su diseño ligero y transpirable te
+            mantiene fresco mientras te esfuerzas por superar tus límites.
+            ¡Lleva contigo la energía de AtlanMotion y haz que cada entrenamiento cuente!
+          </p>
+        </div>
+
+        <div class="contenedor-boton">
+          <a target="_blank"
+            href="https://wa.me/529993650404?text=Hola%2C%20me%20interesa%20el%20producto%20Hoodie%20sin%20mangas%20-%20$450%20de%20AtlanMotion.%20Me%20puede%20dar%20m%C3%A1s%20informaci%C3%B3n."
+            class="boton-comprar">
+            LO QUIERO
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 - Termo -->
+  <div id="modal-2" class="n-modal">
+    <div class="modal-contenido">
+      <div class="boton-cerrar" onclick="closeModal('2')">
+        <img src="img/close-btn.png" alt="Cerrar" />
+      </div>
+
+      <div class="modal-imagen" style="background-image: url(img/producto_termo.png)"></div>
+
+      <div class="modal-info">
+        <div>
+          <h3>TERMO</h3>
+          <div class="modal-precio">$350</div>
+          <p class="modal-descripcion">
+            Mantente hidratado en todo momento con el termo AtlanMotion.
+            Diseñado para conservar la temperatura de tus bebidas por horas,
+            es el compañero perfecto para tus entrenamientos y tu día a día.
+            Resistente, ligero y con un diseño moderno, te ayudará a rendir
+            al máximo sin perder el estilo. ¡Lleva la energía de AtlanMotion contigo!
+          </p>
+        </div>
+
+        <div class="contenedor-boton">
+          <a target="_blank"
+            href="https://wa.me/529993650404?text=Hola%2C%20me%20interesa%20el%20producto%20Termo%20-%20$350%20de%20AtlanMotion.%20Me%20puede%20dar%20m%C3%A1s%20informaci%C3%B3n."
+            class="boton-comprar">
+            LO QUIERO
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 - Mochila -->
+  <div id="modal-3" class="n-modal">
+    <div class="modal-contenido">
+      <div class="boton-cerrar" onclick="closeModal('3')">
+        <img src="img/close-btn.png" alt="Cerrar" />
+      </div>
+
+      <div class="modal-imagen" style="background-image: url(img/producto_mochila.png)"></div>
+
+      <div class="modal-info">
+        <div>
+          <h3>MOCHILA</h3>
+          <div class="modal-precio">$250</div>
+          <p class="modal-descripcion">
+            Lleva todo lo que necesitas con la mochila AtlanMotion. Ligera,
+            resistente y con un diseño práctico, es perfecta para el gimnasio,
+            la escuela o cualquier aventura. Su capacidad y comodidad te
+            permitirán moverte sin límites mientras llevas contigo la energía
+            de AtlanMotion. ¡Prepárate para cualquier desafío!
+          </p>
+        </div>
+
+        <div class="contenedor-boton">
+          <a target="_blank"
+            href="https://wa.me/529993650404?text=Hola%2C%20me%20interesa%20el%20producto%20Mochila%20-%20$250%20de%20AtlanMotion.%20Me%20puede%20dar%20m%C3%A1s%20informaci%C3%B3n."
+            class="boton-comprar">
+            LO QUIERO
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    document.addEventListener('click', function (event) {
+      if (event.target.classList.contains('n-modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.n-modal');
+        modals.forEach(modal => {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
