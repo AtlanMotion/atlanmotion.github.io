@@ -2736,7 +2736,6 @@ a {
    ========================================================= */
 
 .header-programa {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   padding: 2rem 0;
   text-align: center;
   position: relative;
@@ -2977,7 +2976,6 @@ a {
 
   .header-programa {
     padding: 1.5rem 0;
-    margin-top: 60px;
   }
 
   .circulo {
