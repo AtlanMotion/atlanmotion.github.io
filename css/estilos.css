@@ -124,7 +124,6 @@ html {
   opacity: 0;
 }
 
-/* Estilos para el video de fondo */
 .bg-video {
   position: fixed;
   top: 0;
@@ -133,9 +132,12 @@ html {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.8;
   pointer-events: none;
+  mix-blend-mode: screen; /* o 'lighten' o 'overlay' */
 }
+
+
 
 body {
   font-family: var(--font-montserrat);
@@ -156,6 +158,19 @@ body {
   
   position: relative;
   overflow-x: hidden;
+}
+
+/* Y añadir una capa de color detrás */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(60, 60, 60, 0.5); /* Fondo gris */
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Asegurar que el header y contenido estén por encima */
