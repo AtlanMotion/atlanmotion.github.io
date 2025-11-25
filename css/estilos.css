@@ -1761,7 +1761,7 @@ a {
   max-width: 900px;
   margin: 0 auto 4rem;
   padding: 2.5rem;
-  background-color: rgba(254, 209, 56, 0.05);
+  background-color: var(--color-dark);
   border-radius: var(--border-radius);
   border: 1px solid rgba(254, 209, 56, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);

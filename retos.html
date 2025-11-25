@@ -19,13 +19,13 @@
 
   <!-- SECCIÓN PRINCIPAL UNIFICADA -->
   <main class="contenedor-retos">
-    
+
     <!-- Hero Section Unificada con Reto -->
     <section class="hero-retos">
       <img class="hero-retos__imagen" src="img/retos_titulo.png" alt="ATLANMOTION Retos" />
       <h1 class="hero-retos__titulo">SUPERA TUS METAS</h1>
       <p class="hero-retos__descripcion">
-        Cada semana un nuevo desafío te espera para poner a prueba tu resistencia, 
+        Cada semana un nuevo desafío te espera para poner a prueba tu resistencia,
         fuerza y disciplina. Conviértelo en un hábito y lleva tu entrenamiento al siguiente nivel.
       </p>
 
@@ -36,12 +36,10 @@
 
         <!-- Video -->
         <div class="reto-video">
-          <iframe src="https://www.youtube.com/embed/KaJqgweaGss?si=Hob1BxRf9Zceb-iS" 
-                  title="Reto AtlanMotion - Entrenamiento de Fuerza"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" 
-                  allowfullscreen>
+          <iframe src="https://www.youtube.com/embed/KaJqgweaGss?si=Hob1BxRf9Zceb-iS"
+            title="Reto AtlanMotion - Entrenamiento de Fuerza" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
           </iframe>
         </div>
 
@@ -125,7 +123,7 @@
       paso.addEventListener('click', () => {
         paso.disabled = true;
         paso.textContent = `✓ ${paso.textContent} Completado`;
-        
+
         if (index < pasos.length - 1) {
           pasos[index + 1].disabled = false;
         } else {
@@ -161,7 +159,7 @@
       }
     });
   </script>
-   <script src="js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>
