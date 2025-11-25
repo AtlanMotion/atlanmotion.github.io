@@ -1374,11 +1374,7 @@ a {
   display: block;
 }
 
-@media (min-width: 768px) {
-  .imagen-contacto {
-    max-width: 450px;
-  }
-}
+
 
 .boton-contacto {
   display: inline-block;
@@ -1741,9 +1737,9 @@ a {
 }
 
 .hero-retos__imagen {
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-retos__titulo {
@@ -2482,7 +2478,7 @@ a {
 }
 
 .hero-imagen-rutinas {
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -2761,7 +2757,7 @@ a {
 }
 
 .img-principiante {
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   height: auto;
 }
