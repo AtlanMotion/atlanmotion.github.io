@@ -14,35 +14,19 @@
 
   <style>
     /* ============================================ */
-    /* Imágenes de rutinas: contorno amarillo muy sutil */
-    /* (fino y tenue, casi opcional)                    */
+    /* Imágenes de rutinas: borde dorado + glow     */
+    /* (estado fijo, sin hover, sin transición)     */
     /* ============================================ */
     .imagen-principal,
     .imagen-secundaria,
     .imagen-unica {
-      border: 1px solid rgba(254, 209, 56, 0.3) !important;
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(254, 209, 56, 0.06),
-        0 0 14px rgba(254, 209, 56, 0.05) !important;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
-    }
-
-    .imagen-principal:hover,
-    .imagen-secundaria:hover,
-    .imagen-unica:hover {
-      border-color: rgba(254, 209, 56, 0.6) !important;
+      border: 1px solid rgba(254, 209, 56, 0.6) !important;
+      border-radius: 12px !important;
       box-shadow:
         0 10px 28px rgba(0, 0, 0, 0.45),
         0 0 0 1px rgba(254, 209, 56, 0.25),
         0 0 20px rgba(254, 209, 56, 0.18) !important;
-    }
-
-    /* Mantener border-radius original */
-    .imagen-principal,
-    .imagen-secundaria,
-    .imagen-unica {
-      border-radius: 12px !important;
+      transition: none !important;
     }
 
     @media (max-width: 768px) {

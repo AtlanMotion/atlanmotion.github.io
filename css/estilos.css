@@ -1354,13 +1354,10 @@ a {
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: eliminada */
 }
 
-.imagen-nosotros:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-}
+/* :hover eliminado por completo */
 
 .pie-imagen {
   font-style: italic;

@@ -13,25 +13,22 @@
 
   <style>
     /* ============================================ */
-    /* Imágenes: contorno amarillo muy sutil        */
-    /* (fino y tenue, apenas perceptible)           */
+    /* Imágenes: borde dorado limpio                */
+    /* Sin glow, sin halo, sin anillo exterior       */
+    /* (aspecto de "imagen enmarcada", no botón)     */
     /* ============================================ */
     .imagen-nosotros {
-      border: 1px solid rgba(254, 209, 56, 0.3) !important;
-      border-radius: 16px !important;
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(254, 209, 56, 0.06),
-        0 0 14px rgba(254, 209, 56, 0.05) !important;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+      border: 1px solid rgba(254, 209, 56, 0.5) !important;
+      border-radius: 12px !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
+      transition: none !important;
     }
 
+    /* Anular el hover del CSS externo (evita el brinco) */
     .imagen-nosotros:hover {
-      border-color: rgba(254, 209, 56, 0.6) !important;
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(254, 209, 56, 0.25),
-        0 0 20px rgba(254, 209, 56, 0.18) !important;
+      transform: none !important;
+      border-color: rgba(254, 209, 56, 0.5) !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
     }
 
     /* Pie de imagen con más aire */
@@ -102,7 +99,7 @@
       }
 
       .imagen-nosotros {
-        border-radius: 14px !important;
+        border-radius: 12px !important;
       }
 
       .pie-imagen {
@@ -216,8 +213,8 @@
         <!-- COLUMNA DERECHA - IMÁGENES -->
         <div class="columna-imagenes">
           <div class="imagen-contenedor">
-            <img src="img/nosotros_01.png" alt="Imagen representativa de AtlanMotion - Fortalecimiento físico y mental"
-              class="imagen-nosotros" />
+            <img src="img/nosotros_01_color.png"
+              alt="Imagen representativa de AtlanMotion - Fortalecimiento físico y mental" class="imagen-nosotros" />
             <p class="pie-imagen">
               "Nuestro propósito es fortalecer el cuerpo y la mente, motivando a
               cada persona a superarse día a día."
@@ -225,7 +222,7 @@
           </div>
 
           <div class="imagen-contenedor">
-            <img src="img/nosotros_02.png" alt="Imagen representativa de AtlanMotion - Alcanza tu mejor versión"
+            <img src="img/nosotros_02_color.png" alt="Imagen representativa de AtlanMotion - Alcanza tu mejor versión"
               class="imagen-nosotros" />
             <p class="pie-imagen">
               Cada rutina, cada reto, cada paso está pensado para que alcances tu
@@ -235,7 +232,7 @@
 
           <!-- IMAGEN SOBRE SEDENTARISMO -->
           <div class="imagen-contenedor">
-            <img src="img/nosotros_03.png" alt="Consecuencias del sedentarismo" class="imagen-nosotros" />
+            <img src="img/nosotros_03_color.png" alt="Consecuencias del sedentarismo" class="imagen-nosotros" />
             <p class="pie-imagen">
               Únete a una comunidad que te impulsa a dar el siguiente paso cada día.
             </p>
@@ -243,7 +240,7 @@
 
           <!-- IMAGEN SOBRE ACTIVIDAD DIARIA -->
           <div class="imagen-contenedor">
-            <img src="img/nosotros_04.png" alt="Actividad física diaria" class="imagen-nosotros" />
+            <img src="img/nosotros_04_color.png" alt="Actividad física diaria" class="imagen-nosotros" />
             <p class="pie-imagen">
               Cada paso cuenta en tu camino hacia una vida más fuerte y activa.
             </p>
@@ -251,7 +248,7 @@
 
           <!-- IMAGEN SOBRE COMUNIDAD -->
           <div class="imagen-contenedor">
-            <img src="img/nosotros_05.png" alt="Comunidad AtlanMotion" class="imagen-nosotros" />
+            <img src="img/nosotros_05_color.png" alt="Comunidad AtlanMotion" class="imagen-nosotros" />
             <p class="pie-imagen">
               Fortalécete con propósito para alcanzar tu independencia integral.
             </p>
@@ -263,41 +260,6 @@
   </div>
 
   <script src="js/scripts.js"></script>
-
-  <!-- ============================================ -->
-  <!-- Efecto hover: imagen normal → _color.png    -->
-  <!-- ============================================ -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const contenedores = document.querySelectorAll('.columna-imagenes .imagen-contenedor');
-
-      contenedores.forEach(function (cont) {
-        const img = cont.querySelector('.imagen-nosotros');
-        if (!img) return;
-
-        const srcOriginal = img.getAttribute('src');
-        // nosotros_01.png → nosotros_01_color.png
-        const srcColor = srcOriginal.replace(/(\.\w+)$/, '_color$1');
-
-        // Precarga la imagen a color para que el cambio sea instantáneo
-        const preload = new Image();
-        preload.src = srcColor;
-
-        // Hover en escritorio
-        cont.addEventListener('mouseenter', function () {
-          img.src = srcColor;
-        });
-        cont.addEventListener('mouseleave', function () {
-          img.src = srcOriginal;
-        });
-
-        // Tap en móvil (alterna)
-        cont.addEventListener('touchstart', function () {
-          img.src = (img.src === srcColor) ? srcOriginal : srcColor;
-        }, { passive: true });
-      });
-    });
-  </script>
 </body>
 
 </html>
