@@ -499,7 +499,6 @@ a {
 .header__logo:active {
   transform: scale(0.95);
 }
-
 .nav__list {
   display: flex;
   list-style: none;
@@ -513,36 +512,34 @@ a {
   color: var(--color-white);
   padding: 8px 4px;
   position: relative;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
 }
 
 .nav__link:hover {
   color: var(--color-secondary);
-  transform: translateY(-1px);
 }
 
 .nav__link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: var(--color-secondary);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav__link:hover::after {
-  width: 100%;
+  display: none;
 }
 
 .nav__link--active {
   color: var(--color-secondary);
+  font-weight: 900;
 }
 
-.nav__link--active::after {
-  width: 100%;
+/* Quitar el cuadro feo al hacer click, pero mantenerlo con teclado */
+.nav__link:focus {
+  outline: none;
+}
+
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ===== MENÚ HAMBURGUESA ===== */
@@ -1070,15 +1067,15 @@ a {
 }
 
 .testimonial-image {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 15px;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
-  border: 1px solid rgba(254, 209, 56, 0.2);
+  border: 1px #fed138 solid;
 }
 
 .testimonial-image img {
@@ -3316,8 +3313,8 @@ h2,
 }
 
 .flecha {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   stroke-width: 3;
   color: var(--color-primary);
   transition: var(--transition);
@@ -3425,3 +3422,4 @@ body.loading .titulo-tienda img {
   animation: none !important;
   opacity: 0 !important;
 }
+

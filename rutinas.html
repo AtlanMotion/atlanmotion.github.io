@@ -12,6 +12,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
+  <style>
+    /* ============================================ */
+    /* Imágenes de rutinas: contorno amarillo muy sutil */
+    /* (fino y tenue, casi opcional)                    */
+    /* ============================================ */
+    .imagen-principal,
+    .imagen-secundaria,
+    .imagen-unica {
+      border: 1px solid rgba(254, 209, 56, 0.3) !important;
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(254, 209, 56, 0.06),
+        0 0 14px rgba(254, 209, 56, 0.05) !important;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .imagen-principal:hover,
+    .imagen-secundaria:hover,
+    .imagen-unica:hover {
+      border-color: rgba(254, 209, 56, 0.6) !important;
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(254, 209, 56, 0.25),
+        0 0 20px rgba(254, 209, 56, 0.18) !important;
+    }
+
+    /* Mantener border-radius original */
+    .imagen-principal,
+    .imagen-secundaria,
+    .imagen-unica {
+      border-radius: 12px !important;
+    }
+
+    @media (max-width: 768px) {
+
+      .imagen-principal,
+      .imagen-secundaria,
+      .imagen-unica {
+        border-width: 1px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -22,14 +64,15 @@
     <div class="contenedor">
       <img class="hero-imagen-rutinas" src="img/rutinas_titulo.png" alt="Rutinas ATLANMOTION" />
       <p class="hero-texto-rutinas">
-        Encuentra la rutina perfecta para ti y comienza a moverte hacia una vida
-        más saludable. Diseñada para adaptarse a tu ritmo, nuestras rutinas te
-        ayudarán a mantenerte en movimiento y alcanzar tus objetivos.
+        Encuentra la rutina perfecta para ti y comienza a moverte hacia una vida más saludable. Diseñada para adaptarse
+        a tu ritmo, nuestras rutinas te ayudarán a mantenerte en movimiento y alcanzar tus objetivos. Los resultados
+        también dependen de tu alimentación, descanso y constancia.
       </p>
-      <!-- Flecha funcional -->
+      <!-- Flecha funcional (puntiaguda) -->
       <a href="#principiantes" class="btnCirculo">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flecha" viewBox="0 0 24 24">
+          stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="1" class="flecha"
+          viewBox="0 0 24 24">
           <path d="M12 5v14M19 12l-7 7-7-7" />
         </svg>
       </a>

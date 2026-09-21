@@ -10,6 +10,107 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================ */
+    /* Imágenes: contorno amarillo muy sutil        */
+    /* (fino y tenue, apenas perceptible)           */
+    /* ============================================ */
+    .imagen-nosotros {
+      border: 1px solid rgba(254, 209, 56, 0.3) !important;
+      border-radius: 16px !important;
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(254, 209, 56, 0.06),
+        0 0 14px rgba(254, 209, 56, 0.05) !important;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .imagen-nosotros:hover {
+      border-color: rgba(254, 209, 56, 0.6) !important;
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(254, 209, 56, 0.25),
+        0 0 20px rgba(254, 209, 56, 0.18) !important;
+    }
+
+    /* Pie de imagen con más aire */
+    .pie-imagen {
+      margin-top: 0.9rem !important;
+      font-size: 0.85rem !important;
+      opacity: 0.72 !important;
+      line-height: 1.5 !important;
+    }
+
+    /* ============================================ */
+    /* Sección destacada: Sedentarismo              */
+    /* ============================================ */
+    .seccion-sedentarismo {
+      margin: 2.5rem 0;
+      padding: 1.8rem 1.6rem;
+      background: rgba(254, 209, 56, 0.08);
+      border-left: 5px solid #fed138;
+      border-radius: 12px;
+    }
+
+    .seccion-sedentarismo .subtitulo {
+      margin-bottom: 1rem;
+      color: #fed138;
+    }
+
+    .seccion-sedentarismo p {
+      margin-bottom: 1rem;
+      line-height: 1.65;
+    }
+
+    .seccion-sedentarismo p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================ */
+    /* Ajustes responsivos                          */
+    /* ============================================ */
+    @media (max-width: 768px) {
+      .seccion-sedentarismo {
+        padding: 1.4rem 1.2rem;
+        margin: 2rem 0;
+      }
+
+      .seccion-sedentarismo p {
+        font-size: 0.95rem;
+      }
+
+      .imagen-nosotros {
+        border-width: 1px !important;
+      }
+
+      .pie-imagen {
+        font-size: 0.8rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .seccion-sedentarismo {
+        padding: 1.2rem 1rem;
+        margin: 1.5rem 0;
+        border-left-width: 4px;
+      }
+
+      .seccion-sedentarismo p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+
+      .imagen-nosotros {
+        border-radius: 14px !important;
+      }
+
+      .pie-imagen {
+        font-size: 0.78rem !important;
+        margin-top: 0.7rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -39,6 +140,25 @@
               rutinas de ejercicio, retos semanales y planes personalizados, todo
               presentado con un diseño dinámico y accesible que motiva al usuario a
               mantenerse activo y constante en su progreso.
+            </p>
+          </div>
+
+          <!-- SECCIÓN NUEVA: SEDENTARISMO -->
+          <div class="texto-bloque seccion-sedentarismo">
+            <h3 class="subtitulo">EL SEDENTARISMO: UN DESAFÍO REAL</h3>
+            <p>
+              El sedentarismo es la falta de actividad física regular en el día a día,
+              ya sea por trabajo, estudio o rutinas de vida poco activas. Según la
+              <strong>Organización Mundial de la Salud</strong>, es uno de los principales
+              factores de riesgo para el desarrollo de enfermedades cardiovasculares,
+              obesidad y otros problemas de salud.
+            </p>
+            <p>
+              En <span class="texto-destacado">AtlanMotion</span> creemos que incorporar
+              pequeños hábitos de movimiento constante puede marcar una gran diferencia:
+              nuestras rutinas están pensadas para que, sin importar tu punto de partida,
+              encuentres una forma accesible de dejar el sedentarismo atrás y empezar a
+              moverte hacia una vida más activa.
             </p>
           </div>
 
@@ -96,7 +216,7 @@
         <!-- COLUMNA DERECHA - IMÁGENES -->
         <div class="columna-imagenes">
           <div class="imagen-contenedor">
-            <img src="img/nosotros_01.jpg" alt="Imagen representativa de AtlanMotion - Fortalecimiento físico y mental"
+            <img src="img/nosotros_01.png" alt="Imagen representativa de AtlanMotion - Fortalecimiento físico y mental"
               class="imagen-nosotros" />
             <p class="pie-imagen">
               "Nuestro propósito es fortalecer el cuerpo y la mente, motivando a
@@ -112,12 +232,72 @@
               mejor versión.
             </p>
           </div>
+
+          <!-- IMAGEN SOBRE SEDENTARISMO -->
+          <div class="imagen-contenedor">
+            <img src="img/nosotros_03.png" alt="Consecuencias del sedentarismo" class="imagen-nosotros" />
+            <p class="pie-imagen">
+              Únete a una comunidad que te impulsa a dar el siguiente paso cada día.
+            </p>
+          </div>
+
+          <!-- IMAGEN SOBRE ACTIVIDAD DIARIA -->
+          <div class="imagen-contenedor">
+            <img src="img/nosotros_04.png" alt="Actividad física diaria" class="imagen-nosotros" />
+            <p class="pie-imagen">
+              Cada paso cuenta en tu camino hacia una vida más fuerte y activa.
+            </p>
+          </div>
+
+          <!-- IMAGEN SOBRE COMUNIDAD -->
+          <div class="imagen-contenedor">
+            <img src="img/nosotros_05.png" alt="Comunidad AtlanMotion" class="imagen-nosotros" />
+            <p class="pie-imagen">
+              Fortalécete con propósito para alcanzar tu independencia integral.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
   <script src="js/scripts.js"></script>
+
+  <!-- ============================================ -->
+  <!-- Efecto hover: imagen normal → _color.png    -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contenedores = document.querySelectorAll('.columna-imagenes .imagen-contenedor');
+
+      contenedores.forEach(function (cont) {
+        const img = cont.querySelector('.imagen-nosotros');
+        if (!img) return;
+
+        const srcOriginal = img.getAttribute('src');
+        // nosotros_01.png → nosotros_01_color.png
+        const srcColor = srcOriginal.replace(/(\.\w+)$/, '_color$1');
+
+        // Precarga la imagen a color para que el cambio sea instantáneo
+        const preload = new Image();
+        preload.src = srcColor;
+
+        // Hover en escritorio
+        cont.addEventListener('mouseenter', function () {
+          img.src = srcColor;
+        });
+        cont.addEventListener('mouseleave', function () {
+          img.src = srcOriginal;
+        });
+
+        // Tap en móvil (alterna)
+        cont.addEventListener('touchstart', function () {
+          img.src = (img.src === srcColor) ? srcOriginal : srcColor;
+        }, { passive: true });
+      });
+    });
+  </script>
 </body>
 
 </html>
